@@ -2,8 +2,6 @@ import { readConfig } from './config.js';
 import { createApp } from './server.js';
 
 const config = readConfig();
-// CI 练习：故意把字符串赋给数字类型，观察类型检查失败后删除此行。
-config.port = '3000';
 const server = createApp(config.appEnv);
 
 server.on('error', (error) => {
